@@ -16,7 +16,7 @@
     --ink: oklch(20% 0.008 80deg);
     --muted: oklch(45% 0.012 80deg);
     --rule: oklch(80% 0.016 85deg);
-    --accent: oklch(60% 0.19 38deg);
+    --accent: oklch(54% 0.17 38deg);
     --accent-soft: oklch(91% 0.04 50deg);
     --panel: oklch(93% 0.012 85deg);
     --button-text: var(--paper);
@@ -131,7 +131,7 @@
   a.button:hover {
     background: var(--accent);
     border-color: var(--accent);
-    color: white;
+    color: var(--button-text);
   }
 }
 
@@ -154,6 +154,7 @@
 
   main > .section.ink {
     --ink: var(--paper);
+    --accent: oklch(78% 0.12 45deg);
     --muted: oklch(75% 0.01 85deg);
     --rule: oklch(40% 0.01 85deg);
     --button-text: oklch(20% 0.008 80deg);
