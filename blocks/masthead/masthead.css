@@ -1,0 +1,77 @@
+@layer blocks {
+  .masthead { container-type: inline-size; }
+
+  .masthead > div {
+    display: grid;
+    gap: 3.5rem;
+    align-items: end;
+  }
+  .masthead :where(.masthead-copy, .masthead-note) { min-inline-size: 0; }
+  .masthead p { max-inline-size: 39rem; }
+  .masthead .masthead-note p { font-size: 0.9375rem; }
+  .masthead .masthead-copy > * + * { margin-block-start: 1.75rem; }
+
+  .masthead h1 {
+    max-inline-size: 13ch;
+    font-size: clamp(3.25rem, 8.5cqi, 7.5rem);
+    font-weight: 650;
+    line-height: 0.96;
+    letter-spacing: -0.065em;
+  }
+
+  .masthead .masthead-kicker {
+    margin-block-end: 2.5rem;
+    color: var(--muted);
+    font: 0.75rem/1.5 var(--mono-font);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+
+  .masthead .masthead-kicker em { font-style: normal; }
+
+  .masthead .masthead-copy > h1 + p {
+    font-size: clamp(1.125rem, 2cqi, 1.375rem);
+    line-height: 1.5;
+  }
+
+  .masthead .masthead-note {
+    position: relative;
+    padding: clamp(1.5rem, 3cqi, 2.5rem);
+    background: var(--accent-soft);
+    border-block-start: 3px solid var(--accent);
+  }
+
+  .masthead .masthead-note::after {
+    content: '';
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline-end: 0;
+    inline-size: 1.5rem;
+    block-size: 1.5rem;
+    background: linear-gradient(135deg, var(--accent) 50%, var(--paper) 50%);
+  }
+
+  .masthead .masthead-note > * + * { margin-block-start: 1.5rem; }
+
+  .masthead .masthead-note > p:first-child {
+    font: 0.75rem/1.5 var(--mono-font);
+    text-transform: uppercase;
+  }
+  .masthead .masthead-note h2 { font-size: clamp(2rem, 3.3cqi, 2.75rem); }
+
+  .masthead.compact h1 {
+    max-inline-size: 18ch;
+    font-size: clamp(3rem, 7cqi, 6rem);
+  }
+
+  @container (width >= 56rem) {
+    .masthead.has-note > div {
+      grid-template-columns: minmax(0, 1fr) 19rem;
+      gap: 4rem;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .masthead .masthead-note { border: 1px solid CanvasText; }
+  }
+}

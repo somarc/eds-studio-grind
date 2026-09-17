@@ -1,0 +1,49 @@
+@layer blocks {
+  .ledger { container-type: inline-size; }
+
+  .ledger .ledger-entry {
+    display: grid;
+    gap: 1.25rem;
+    border-block-start: 1px solid var(--rule);
+    padding-block: 2.25rem;
+  }
+  .ledger .ledger-entry:last-child { border-block-end: 1px solid var(--rule); }
+
+  .ledger .ledger-meta {
+    color: var(--muted);
+    font: 0.75rem/1.7 var(--mono-font);
+  }
+
+  .ledger .ledger-meta strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .ledger .ledger-meta > * + * { margin-block-start: 0.25rem; }
+
+  .ledger .ledger-body {
+    min-inline-size: 0;
+    max-inline-size: 49rem;
+  }
+  .ledger .ledger-body > * + * { margin-block-start: 0.875rem; }
+  .ledger .ledger-body h3 { max-inline-size: 29ch; }
+
+  .ledger .ledger-body h3 a {
+    display: inline-block;
+    text-decoration: none;
+  }
+  .ledger .ledger-body h3 a:hover { text-decoration: underline; }
+
+  .ledger .ledger-body > p {
+    color: var(--muted);
+    max-inline-size: 42rem;
+  }
+  .ledger .ledger-body code { color: var(--ink); }
+
+  @container (width >= 40rem) {
+    .ledger .ledger-entry {
+      grid-template-columns: 10rem minmax(0, 1fr);
+      gap: 3rem;
+    }
+    .ledger .ledger-entry > :nth-child(n + 3) { grid-column: 2; }
+  }
+}

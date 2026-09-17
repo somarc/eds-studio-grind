@@ -20,3 +20,9 @@ Edge Delivery Services. Read a block first. Omissions are in the repo or known.
 - A PR without a `{branch}--{repo}--{owner}.aem.page/{path}` link is rejected.
 - All committed files are served. Use `.hlxignore`.
 - Skills: `/plugin marketplace add adobe/skills`, then `aem-edge-delivery-services` (24 skills, incl. `docs-search`).
+
+## Grind-specific contract
+- Use explicit root `--qmd` for operational DA commands and a shared `DA_RUN_CORRELATION_ID` for each episode. Preserve and verify failure receipts; never disable journaling to evade friction.
+- Resolve the external production workspace before authoring. Keep DA content, plans, receipts, and runtime state out of this implementation repository.
+- Public copy is curated evidence about building the native Studio, not private transcripts or a claim that the native app performed CLI work. Distinguish observed, historical, proposed, and unknown states.
+- Read `DIRECTION.md` for the first-edition visual, content, and CSS ownership contracts.
